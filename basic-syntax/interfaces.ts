@@ -86,3 +86,45 @@ runLoginTest(testData1);
 runLoginTest(testData2);
 runLoginTest(testData3);
 
+// -----------------------------------------------------------------excercise-----------------------------------------------------------------
+
+// Create an interface called TestSuite that has:
+// - name (string)
+// - totalTests (number)
+// - passedTests (number)
+// - status (string, can only be "running", "completed", "failed")
+
+interface TestSuite{
+  name: string;
+  totalTests: number;
+  passedTests: number;
+  status: 'running' | 'completed' | 'failed';
+}
+
+// Then create two test suites using this interface
+let testSuitData1: TestSuite = {
+  name: 'login page',
+  totalTests: 3,
+  passedTests: 3,
+  status: 'completed'
+
+}
+
+let testSuitData2: TestSuite = {
+  name: 'create queue',
+  totalTests: 5,
+  passedTests: 1,
+  status: 'running'
+
+}
+
+// Print their details
+function result(data: TestSuite): void {
+  console.log(`Running test for ${data.name}`)
+  console.log(`With total test cases ${data.passedTests}/${data.totalTests}`)
+  console.log(`Status running ${data.status}`)
+  console.log('\n')
+}
+
+result(testSuitData1);
+result(testSuitData2);
